@@ -2,13 +2,13 @@ import requests, json, time
 
 datahora_atual = time.strftime('%Y-%m-%d'+'T'+'%H:%M:%S'+'Z', time.localtime())
 
-data_api = {
+header_api = {
     'User-agent': 'cliente da API'
 }
 
 api_site = f'https://api.covid19api.com/total/country/brazil/status/confirmed?from={datahora_atual}&to={datahora_atual}'
 
-requisicao = requests.get(url=api_site, data=data_api)
+requisicao = requests.get(url=api_site, headers=header_api)
 requisicao_json = json.loads(requisicao.text)
 
 for x in requisicao_json:

@@ -9,7 +9,7 @@ header_api = {
 api_site = f'https://api.covid19api.com/total/country/brazil/status/confirmed?from={datahora_atual}&to={datahora_atual}'
 
 requisicao = requests.get(url=api_site, headers=header_api)
-requisicao_json = json.loads(requisicao.text)
+requisicao_json = json.dumps(requisicao.text)
 
 for x in requisicao_json:
     print('País:', x['Country'] + ' -'*2 +

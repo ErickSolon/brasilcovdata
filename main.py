@@ -24,7 +24,7 @@ pdf.set_font("Arial", size=10)
 for x in json_requisicao:
     pdf.cell(195, 10, txt=f'País: {x["Country"]}, Casos confirmados: {str(x["Cases"])}, Histórico por data: {x["Date"]}', ln=2, align='C')
     
-pdf.output("GFG.pdf")
+pdf.output("Dados.pdf")
 
 print("\n\nPDF Gerado!")
 print("\n\nSite da API: covid19api.com\n")
